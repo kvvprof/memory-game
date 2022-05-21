@@ -1,13 +1,235 @@
-body {
+/*Обнуление*/
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  border: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+  font-style: normal;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+
+:root {
+  --text-color: #E9E9F6;
+}
+
+body {
+  background-color: #2C2C38;
+  color: var( --text-color);
+  font-family: 'Play', sans-serif;
+  font-size: 16px;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.memory {
+  width: 650px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.memory__title {
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.memory__info {
+  padding-top: 10px;
+  display: none;
+}
+.memory__info--active {
+  display: block;
+}
+
+.memory__restart {
+  cursor: pointer;
+  text-decoration: underline;
+  margin-top: 5px;
+  font-weight: 700;
+}
+
+.memory__items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.memory__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 130px;
+  background: #805EDE;
+  margin: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.memory__item-img {
+  width: 130px;
+  height: 130px;
+  opacity: 1;
+  transition: 0.3s;
+  background-color: #5397C7;
+  padding: 20px;
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+.memory__item-img--unactive {
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.memory__item-img--success {
+  background-color: #77C990;
+}
+
+.memory__item-img--error {
+  background-color: #EC7E68;
+}
+
+.memory__footer {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 560px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  .memory {
+    width: 300px;
+  }
+
+  .memory__item {
+    width: 70px;
+    height: 70px;
+  }
+
+  .memory__title {
+    font-size: 35px;
+    font-weight: 700;
+  }
+
+  .memory__item-img {
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+  }
+
+}
+
+@media screen and (max-width: 280px) {
+
+  .memory {
+    width: 280px;
+  }
+
+  .memory__item {
+    width: 65px;
+    height: 65px;
+  }
+
+  .memory__item-img {
+    width: 65px;
+    height: 65px;
+  }
+
 }
